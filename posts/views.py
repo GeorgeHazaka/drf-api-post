@@ -1,7 +1,7 @@
 from rest_framework import generics, permissions
 from drf_api.permissions import IsOwnerOrReadOnly
-from posts.models import Post
-from posts.serializers import PostSerializer
+from .models import Post
+from .serializers import PostSerializer
 
 
 class PostList(generics.ListCreateAPIView):
