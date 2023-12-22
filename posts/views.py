@@ -6,10 +6,11 @@ from .serializers import PostSerializer
 
 class PostList(generics.ListCreateAPIView):
     """
-    List posts or create a post if logged in.
+    List posts or create a post if logged in
+    The perform_create method associates the post with the logged in user.
     """
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all()
 
     def perform_create(self, serializer):
@@ -18,8 +19,8 @@ class PostList(generics.ListCreateAPIView):
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve a post, or update it by id if you own it, or delete it by id if you own it.
+    Retrieve a post and edit or delete it if you own it.
     """
-    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.all()
