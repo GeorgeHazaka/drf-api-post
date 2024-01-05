@@ -1,15 +1,35 @@
 # Gamers Nest
 
-## About the project
-This project provides a Django Rest Framework API for the [Gamers Nest]() web app.
-Gamers Nest is for all people who are interested in gaming, as you can:
-1) Share Your Game Moments: Gamers Nest is where gamers like you can post about your gaming adventures! Share your wins, funny moments, or just chat about your favorite games.
-2) Connect with Others: Like what others are posting? Give them a thumbs up and drop a comment. It's an awesome way to connect with fellow gamers and make new gaming buddies!
-3) Find out what games are buzzing in the community. Get recommendations, tips, and tricks from other gamers. Who knows, you might discover your next favorite game!
-4) Stay in the Loop: Your personalized gaming feed keeps you updated on what's happening. Don't miss out on cool posts or invites to game together.
-5) Easy to Use: Gamers Nest is super easy to use. Whether you're a pro gamer or just starting, posting and chatting with others is a piece of cake.
+## Gamers Nest API Goals
+
+1. **User Interaction:** Enable sharing and engagement among gamers.
+2. **Community Building:** Foster connections and friendships in the gaming community.
+3. **Content Discovery:** Facilitate game recommendations and tips.
+4. **User-Friendly Interface:** Ensure an intuitive and seamless user experience.
+5. **Data Models:** Implement structured models for posts, profiles, comments, likes, and bookmarks.
+6. **Security:** Prioritize secure user authentication and authorization.
+7. **Third-Party Integrations:** Integrate services like Cloudinary for efficient media management.
+8. **Documentation:** Provide clear and comprehensive developer documentation.
+9. **Deployment:** Streamline deployment for accessibility on platforms like Heroku.
+
+In summary, the API aims to create a vibrant platform for gamers to connect, share, and explore the gaming world together.
+
 
 ## Table of contents
+
+1. [Gamers Nest](#gamers-nest)
+    1. [Gamers Nest API Goals](#gamers-nest-api-goals)
+    2. [Table of contents](#table-of-contents)
+    3. [Planning](#planning)
+        1. [Data models](#data-models)
+    4. [API endpoints](#api-endpoints)
+    5. [Frameworks, libraries, and dependencies](#frameworks-libraries-and-dependencies)
+    6. [Testing](#testing)
+        1. [Manual testing](#manual-testing)
+        2. [Automated tests](#automated-tests)
+        3. [Python validation](#python-validation)
+    7. [Deployment](#deployment)
+    8. [Credits](#credits)
 
 ## Planning
 
@@ -27,7 +47,6 @@ Represents the likes of the comments, using a many-to-one relationship to both C
 Each user can like any comment they want as long as they are logged in.
 
 ## API endpoints
-# API Endpoints Schedule
 
 | Endpoint                | URL                     | HTTP Method | Description                        |
 |-------------------------|-------------------------|-------------|------------------------------------|
