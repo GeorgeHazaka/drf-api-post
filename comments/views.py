@@ -13,7 +13,7 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.annotate(
-        likes_count=Count('comment_likes', distinct=True)
+        commentlikes_count=Count('comment_likes', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -23,7 +23,7 @@ class CommentList(generics.ListCreateAPIView):
         'post',
     ]
     ordering_fields = [
-        'likes_count',
+        'commentlikes_count',
     ]
 
     def perform_create(self, serializer):
@@ -38,5 +38,5 @@ class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = CommentDetailSerializer
     queryset = Comment.objects.annotate(
-        likes_count=Count('comment_likes', distinct=True)
+        commentlikes_count=Count('comment_likes', distinct=True)
     ).order_by('-created_at')
