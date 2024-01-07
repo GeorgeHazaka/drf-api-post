@@ -13,8 +13,8 @@ class CommentSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    commentlike_id = serializers.SerializerMethodField()
-    commentlikes_count = serializers.ReadOnlyField()
+    comment_like_id = serializers.SerializerMethodField()
+    comment_likes_count = serializers.ReadOnlyField()
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
 
@@ -22,13 +22,13 @@ class CommentSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
-    def get_commentlike_id(self, obj):
+    def get_comment_like_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
-            commentlike = CommentLike.objects.filter(
+            comment_like = CommentLike.objects.filter(
                 owner=user, comment=obj
             ).first()
-            return commentlike.id if commentlike else None
+            return comment_like.id if comment_like else None
         return None
 
     def get_created_at(self, obj):
@@ -42,8 +42,8 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'post', 'created_at',
-            'updated_at', 'content', 'commentlikes_count',
-            'commentlike_id',
+            'updated_at', 'content', 'comment_likes_count',
+            'comment_like_id', 'test',
         ]
 
 
