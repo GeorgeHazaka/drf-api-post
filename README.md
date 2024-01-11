@@ -13,6 +13,22 @@
 9. **Deployment:** Streamline deployment for accessibility on platforms like Heroku.
 
 In summary, the API aims to create a vibrant platform for gamers to connect, share, and explore the gaming world together.
+Here is a link to the React [Gamers Nest](https://gamers-nest-27823b8a37a8.herokuapp.com/) app.
+
+## Admin Credentials
+
+SuperUsers:
+
+1. - Username: george
+   - Password: password
+
+2. - Username: username
+   - Password: password
+
+3. - Username: username2
+   - Password: password2
+
+
 
 
 ## Table of contents
